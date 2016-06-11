@@ -1,5 +1,6 @@
 package kernel.spring.DI.implemation;
 
+import kernel.spring.DI.annotation.Cold;
 import kernel.spring.DI.interfaces.Dessert;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
@@ -9,5 +10,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Primary
+@Cold
 public class Cookie implements Dessert{
 }

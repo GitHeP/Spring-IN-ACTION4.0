@@ -1,5 +1,6 @@
 package kernel.spring.DI.implemation;
 
+import kernel.spring.DI.interfaces.Dessert;
 import kernel.spring.DI.javaconfig.JavaConfig;
 import kernel.spring.DI.model.CEO;
 import kernel.spring.DI.model.CEOConfig;
@@ -20,8 +21,10 @@ import org.junit.Assert;
 @ContextConfiguration(classes = {JavaConfig.class})
 public class JavaConfigTest {
 
+
     @Autowired(required = false)
     private CEO ceo;
+
 
     @Test
     public void ceoShouldNotBeNull(){
