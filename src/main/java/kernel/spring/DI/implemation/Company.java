@@ -11,11 +11,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Company implements Team {
 
+    @Autowired(required = false)
     private CEO ceo;
 
     public Company(){}
 
-    @Autowired(required = false)
     public Company(CEO ceo){
         this.ceo = ceo;
     }

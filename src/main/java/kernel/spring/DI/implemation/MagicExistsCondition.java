@@ -1,5 +1,7 @@
 package kernel.spring.DI.implemation;
 
+import kernel.spring.DI.model.CEO;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.env.Environment;
@@ -21,7 +23,12 @@ public class MagicExistsCondition implements Condition{
         String[] activeProfiles = environment.getActiveProfiles();
         System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + Arrays.toString(activeProfiles));
         System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + Arrays.toString(environment.getDefaultProfiles()));
-        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + environment.getProperty("magic"));
-        return environment.containsProperty("magic");
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "[" + environment.getProperty("os.name") + "]");
+
+        ConfigurableListableBeanFactory beanFactory = conditionContext.getBeanFactory();
+        CEO ceo = beanFactory.getBean(CEO.class);
+        System.out.println(ceo);
+
+        return environment.containsProperty("os.name");
     }
 }

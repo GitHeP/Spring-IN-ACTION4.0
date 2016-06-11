@@ -1,6 +1,5 @@
 package kernel.spring.DI.bean;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by kernel on 2016/6/10.
