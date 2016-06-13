@@ -10,9 +10,10 @@
 
     <import resource="classpath*:conf/spring/mybeans.xml"/>
 
-    <bean id="company" class="kernel.spring.DI.implemation.Company">
-        <!--<constructor-arg ref="ceo"></constructor-arg>-->
-    </bean>
+    <context:property-placeholder location="classpath:conf.properties" file-encoding="utf-8"/>
 
+    <bean id="expressiveConfig" class="kernel.spring.DI.javaconfig.ExpressiveConfig"/>
+
+    <bean id="company" class="kernel.spring.DI.implemation.Company"/>
 
 </beans>
