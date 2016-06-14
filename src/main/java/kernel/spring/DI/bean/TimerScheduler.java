@@ -9,11 +9,17 @@ public class TimerScheduler {
 
     private int minute;
 
+    private String ss;
+
+    private boolean flag;
+
     public TimerScheduler(){}
 
-    public TimerScheduler(int hour,int minute){
+    public TimerScheduler(boolean flag,int hour,int minute,String ss){
         this.hour = hour;
+        this.flag = flag;
         this.minute = minute;
+        this.ss = ss;
     }
 
     public int getHour() {
@@ -30,5 +36,21 @@ public class TimerScheduler {
 
     public void setMinute(int minute) {
         this.minute = minute;
+    }
+
+    public String getSs() {
+        return ss;
+    }
+
+    public void setSs(String ss) {
+        this.ss = ss;
+    }
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
     }
 }

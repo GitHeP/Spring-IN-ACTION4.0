@@ -14,6 +14,10 @@ public class DynamicTimeArgConfig {
 
     private int second;
 
+    private String arg = "spring in action 4.0";
+
+    private String email = "anonymou_s@163.com";
+
     public int getHour() {
         return hour;
     }
@@ -36,5 +40,21 @@ public class DynamicTimeArgConfig {
 
     public void setSecond(int second) {
         this.second = second;
+    }
+
+    public String getArg() {
+        return arg;
+    }
+
+    public void setArg(String arg) {
+        this.arg = arg;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

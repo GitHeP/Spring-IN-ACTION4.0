@@ -22,8 +22,10 @@ public class TimerSchedulerTest {
     @Test
     public void testSpEL(){
 
+        System.out.println("boolean[" + timerScheduler.isFlag() + "]");
         System.out.println("hour[" + timerScheduler.getHour() + "]");
         System.out.println("minute[" + timerScheduler.getMinute() + "]");
+        System.out.println("String[" + timerScheduler.getSs() + "]");
         Assert.assertNotNull(timerScheduler);
     }
 }

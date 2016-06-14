@@ -19,8 +19,10 @@
     <!--<bean id="company" class="kernel.spring.DI.implemation.Company"/>-->
 
     <bean id="timerScheduler" class="kernel.spring.DI.bean.TimerScheduler">
-        <constructor-arg index="0" value="#{dynamicTimeArgConfig.hour}"/>
-        <constructor-arg index="1" value="#{dynamicTimeArgConfig.minute}"/>
+        <constructor-arg index="0" value="#{dynamicTimeArgConfig.email matches '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.com'}"/>
+        <constructor-arg index="1" value="#{T(java.lang.Math).random() * 100}"/>
+        <constructor-arg index="2" value="#{dynamicTimeArgConfig.minute}"/>
+        <constructor-arg index="3" value="#{dynamicTimeArgConfig.arg?.toUpperCase()}"/>
     </bean>
 
 </beans>
