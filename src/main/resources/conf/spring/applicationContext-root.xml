@@ -10,10 +10,17 @@
 
     <import resource="classpath*:conf/spring/mybeans.xml"/>
 
+    <context:component-scan base-package="kernel.spring.DI.bean"/>
+
     <context:property-placeholder location="classpath:conf.properties" file-encoding="utf-8"/>
 
-    <bean id="expressiveConfig" class="kernel.spring.DI.javaconfig.ExpressiveConfig"/>
+    <!--<bean id="expressiveConfig" class="kernel.spring.DI.javaconfig.ExpressiveConfig"/>
+-->
+    <!--<bean id="company" class="kernel.spring.DI.implemation.Company"/>-->
 
-    <bean id="company" class="kernel.spring.DI.implemation.Company"/>
+    <bean id="timerScheduler" class="kernel.spring.DI.bean.TimerScheduler">
+        <constructor-arg index="0" value="#{dynamicTimeArgConfig.hour}"/>
+        <constructor-arg index="1" value="#{dynamicTimeArgConfig.minute}"/>
+    </bean>
 
 </beans>
