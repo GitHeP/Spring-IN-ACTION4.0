@@ -22,9 +22,10 @@ public class UserDao {
         user_1.setContactAddress("天朝帝都");
         user_1.setEmail("anonymou_s@163.com");
         user_1.setGender("男");
-        user_1.setNickName("kernel");
+        user_1.setNickName("当时年少春衫薄");
         user_1.setSignInDate(new Date(2016,5,3));
-        db.put(user_1.getEmail(),user_1);
+        user_1.setPassWord("123");
+        db.put(user_1.getNickName(),user_1);
     }
 
     public User findUserByUserName(String userName){
