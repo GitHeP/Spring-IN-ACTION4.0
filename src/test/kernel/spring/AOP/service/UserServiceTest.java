@@ -2,6 +2,7 @@ package kernel.spring.AOP.service;
 
 import kernel.spring.AOP.aspect.PerformanceStatistics;
 import kernel.spring.AOP.bean.LoginBean;
+import kernel.spring.AOP.bean.SimpleBean;
 import kernel.spring.AOP.bean.TestResultDataCollect;
 import kernel.spring.AOP.config.SpringAOPConfig;
 import kernel.spring.common.SpringApplicationContextProvider;
@@ -32,6 +33,15 @@ public class UserServiceTest {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private SimpleBean simpleBean;
+
+    @Test
+    public void testSE(){
+
+        userService.test(simpleBean);
+    }
 
     @Test
     public void testPerformanceStatisticsAspect(){

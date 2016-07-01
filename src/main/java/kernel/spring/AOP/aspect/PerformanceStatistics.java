@@ -46,8 +46,8 @@ public class PerformanceStatistics {
         trdc.collect(Long.valueOf(executionTime));
     }
 
-    @Before("execution(* kernel.spring.AOP.service..*(..))")
-    public void before(JoinPoint jp){
+    @Before("execution(* kernel.spring.AOP.service.UserService.login(..)) && args(loginBean)")
+    public void before(JoinPoint jp,LoginBean loginBean){
 
         System.out.println("[" + new Date() + "] execution method[before]");
         Object target = jp.getTarget();
@@ -79,8 +79,17 @@ public class PerformanceStatistics {
     }
 
 
-    @After("execution(* kernel.spring.AOP.service..*(..))")
-    public void after(){
+    @After("execution(* kernel.spring.AOP.service..*(..)) && args(loginBean)")
+    public void after(LoginBean loginBean){
         System.out.println("[" + new Date() + "] execution method[after]");
     }
+
+    @AfterReturning(value = "execution(* kernel.spring.AOP.service.UserService.test(..)) && bean(userService)",returning = "simpleBean")
+    public Object afterReturning(Object simpleBean){
+
+        System.out.println(simpleBean.getClass().getName());
+        return simpleBean;
+    }
+
+
 }

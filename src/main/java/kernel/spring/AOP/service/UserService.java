@@ -1,6 +1,7 @@
 package kernel.spring.AOP.service;
 
 import kernel.spring.AOP.bean.LoginBean;
+import kernel.spring.AOP.bean.SimpleBean;
 import kernel.spring.AOP.dao.UserDao;
 import kernel.spring.AOP.model.User;
 import org.apache.commons.lang.StringUtils;
@@ -22,6 +23,12 @@ public class UserService {
 
     @Autowired
     private UserDao userDao;
+
+    public SimpleBean test(SimpleBean simpleBean){
+
+        System.out.println(simpleBean.toString());
+        return simpleBean;
+    }
 
     public User login(LoginBean loginBean){
 
